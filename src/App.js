@@ -17,38 +17,6 @@ function App() {
   const [islogedIn, setislogedIn] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const [dashboardView, setdashboardView] = useState(false);
-  // const [loading, setLoading] = useState();
-  // const [websiteData, setWebsiteData] = useState();
-
-  // const baseUrl = window.location.origin;
-
-
-  // const getLaunchData = () =>{
-  //   const formData = new FormData();
-  //   formData.append("url", baseUrl);
-
-  //   // {"url": baseUrl}
-   
-  //   requestInstance
-  //     .post(API_ENDPOINT.WEBSITE_POST_API, formData)
-  //     .then((res) => {
-  //       console.log("🚀 ~ file: App.js:27 ~ .then ~ res:", res)
-  //       setLoading(true)
-  //       setWebsiteData(res.data);
-  //       toast.success(res.data.message);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       toast.error(err);
-  //       setLoading(false);
-  //     });
-  // }
-
-  // console.log('extension runnning')
-  // useEffect(() => {
-  //   getLaunchData();
-  //   console.log('extension runnning inside useEffect')
-  // }, [])
  
   
   useEffect(() => {
