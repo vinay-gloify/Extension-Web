@@ -7,6 +7,17 @@
 
   "manifest_version": 3,
 
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
   "host_permissions": ["<all_urls>"],
 
   "action": {
@@ -20,7 +31,9 @@
       "128": "Linkedin.png"
     }
   },
-  "background": {
-    "service_worker": "background.js"
+
+ "background": {
+    "service_scripts": ["background.js"],
+    "service_persistent": false
   }
 }

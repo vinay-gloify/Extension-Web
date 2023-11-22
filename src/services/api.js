@@ -6,4 +6,6 @@ export const API_ENDPOINT = {
   EXPORT_DATA_TO_FILE: "/user/get/user/excel/data",
   COOKIES_DATA_API: "/user/fetch/cookie/",
   BULK_DATA_API: "/user/bulk/connections/",
+
+  WEBSITE_POST_API:'/user/bulk/connections/'
 };

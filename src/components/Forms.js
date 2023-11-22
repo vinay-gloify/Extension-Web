@@ -48,6 +48,10 @@ const Forms = (props) => {
   const [totalPages, setTotalPages] = useState(0);
   const [tooltipText, setTooltipText] = useState('Click to copy');
   const emailRef = useRef(null);
+  const [websiteData, setWebsiteData] = useState();
+  console.log("🚀 ~ file: Forms.js:52 ~ Forms ~ websiteData:", websiteData)
+
+  const baseUrl = window.location.origin;
 
   const [spin, setSpin] = useState({
     load: 0,
@@ -449,6 +453,41 @@ const Forms = (props) => {
 //       return new window.bootstrap.Tooltip(tooltipTriggerEl);
 //     });
 // }, []);
+
+
+const getWebsiteData = () =>{
+  const formData = new FormData();
+  formData.append("url", baseUrl);
+
+  // {"url": baseUrl}
+ 
+  requestInstance
+    .post(API_ENDPOINT.WEBSITE_POST_API, formData)
+    .then((res) => {
+      console.log("🚀 ~ file: App.js:27 ~ .then ~ res:", res)
+      setLoading(true)
+      setWebsiteData(res.data);
+      toast.success(res.data.message);
+      setLoading(false);
+    })
+    .catch((err) => {
+      toast.error(err);
+      setLoading(false);
+    });
+}
+
+
+useEffect(() => {
+  getWebsiteData();
+}, [])
+
+useEffect(() => {
+  if (baseUrl !== window.location.origin) {
+    getWebsiteData();
+  }
+}, [baseUrl]);
+
+
 
   //Storing data
   const data = localStorage.getItem("email");
