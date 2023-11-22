@@ -7,8 +7,6 @@ import Signup from "./components/Signup";
 import { getCurrentUser } from "./utils/utils";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import requestInstance from "./utils/request";
-import { API_ENDPOINT } from "./services/api";
 
 
 function App() {
