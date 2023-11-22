@@ -48,6 +48,7 @@ const Forms = (props) => {
   const [totalPages, setTotalPages] = useState(0);
   const [tooltipText, setTooltipText] = useState('Click to copy');
   const emailRef = useRef(null);
+  const target = useRef(null);
   const [websiteData, setWebsiteData] = useState();
   console.log("🚀 ~ file: Forms.js:52 ~ Forms ~ websiteData:", websiteData)
 
@@ -477,6 +478,7 @@ const getWebsiteData = () =>{
 }
 
 
+
 useEffect(() => {
   getWebsiteData();
 }, [])
@@ -513,14 +515,20 @@ useEffect(() => {
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -550,14 +558,20 @@ useEffect(() => {
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -587,14 +601,20 @@ useEffect(() => {
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -624,14 +644,20 @@ useEffect(() => {
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -657,18 +683,25 @@ useEffect(() => {
                 </div>
               </div>
               <div className="borderBottom"></div>
+
 
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -694,18 +727,25 @@ useEffect(() => {
                 </div>
               </div>
               <div className="borderBottom"></div>
+
 
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -731,18 +771,25 @@ useEffect(() => {
                 </div>
               </div>
               <div className="borderBottom"></div>
+
 
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -768,18 +815,25 @@ useEffect(() => {
                 </div>
               </div>
               <div className="borderBottom"></div>
+
 
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -805,18 +859,25 @@ useEffect(() => {
                 </div>
               </div>
               <div className="borderBottom"></div>
+
 
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -842,18 +903,25 @@ useEffect(() => {
                 </div>
               </div>
               <div className="borderBottom"></div>
+
 
               <div class="d-flex my-3 px-3">
                 <div class="col-4">
                   <h6 className="ellipsis">Surender Chhabra</h6>
-                  <p 
-                  ref={emailRef}
-                  className="text-secondary cursor-pointer ellipsis m-0"
-                  data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title={tooltipText}
-                  onClick={handleClipboard}
-                  >surender.chhabra@heromotocorp.com</p>
+
+                  <OverlayTrigger
+                      placement="top"
+                      overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                    >
+                  <p ref={target}
+                    onClick={()=>handleCopy('surender.chhabra123@heromotocorp.com')}
+                    data-toggle="tooltip"
+                    data-trigger="manual"
+                    data-placement="top"
+                    className="text-secondary cursor-pointer ellipsis m-0"
+                   >surender.chhabra@heromotocorp.com</p>
+                  </OverlayTrigger>
+
                 </div>
                 <div class="col-4 text-center">
                   <small className="badge badge-pill themeBadgeColor text-white">Sales Manager</small>
@@ -879,6 +947,7 @@ useEffect(() => {
                 </div>
               </div>
               <div className="borderBottom"></div>
+
 
 
           </div>
