@@ -1,0 +1,170 @@
+.errorMsg {
+  width: 15rem;
+}
+
+.progresscredit {
+  width: 10rem;
+  margin-left: 7rem;
+}
+
+.btnget {
+  color: #fda098;
+  border: 2px solid #fda098;
+  background-color: white;
+}
+
+.btnget:hover {
+  background: linear-gradient(53.88deg, #3569f3 11.4%, #ff8e5b 100%);
+  border: 2px solid white;
+  color: white;
+}
+
+.footer {
+  background-color: antiquewhite;
+}
+
+.extnav {
+  background: antiquewhite;
+}
+
+.nav1:hover {
+  color: green !important;
+}
+
+.data_text {
+  font-size: 14px !important;
+}
+
+.subHeading {
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.Form_mail {
+  background-color: #faebd7;
+  font-size: 14px;
+}
+
+.form_phone {
+  background-color: #faebd7;
+  border-radius: 0 0 6px 6px;
+  font-size: 14px;
+}
+
+.form_mobile {
+  margin-left: 15.9rem;
+}
+
+.paginationBtn {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.paginationBtn:active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+li {
+  /* margin-inline: 10px;
+  color: black !important;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 3px; */
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 10px;
+}
+.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* ---Bulk Data--- */
+.bulk_img {
+  width: 4rem;
+}
+
+/* .bulkdata_data {
+  overflow: scroll;
+} */
+
+/* #bulk_email {
+  display: none;
+} */
+
+#bulkdata {
+  display: none;
+}
+
+.bulk_mailid {
+  font-size: 14px;
+  background-color: antiquewhite;
+  /* border-radius: 0px 0px 6px 6px; */
+}
+
+.bulk_name {
+  max-width: 11rem;
+}
+
+.bulk_mobile {
+  margin-left: 14.8rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.borderBottom{
+  border-bottom: 1px solid antiquewhite;
+}
+
+.themeBadgeColor{
+  background-color: #e75a5a;
+  color: #fff;
+}
+
+.themeBadgeColor:hover{
+  background-color: #e75a5a;
+  color: #fff;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px; 
+}
+
+.scrollable-div{
+  height: 300px;
+  overflow-y: scroll;
+}

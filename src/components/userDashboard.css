@@ -1,0 +1,11 @@
+
+
+.table{
+    width: 110vw;
+}
+
+@media only screen and (max-width: 756px){
+    .table{
+        width: 150vw;
+    }
+}

@@ -1,0 +1,30 @@
+.errormsg{
+    color: tomato;
+    margin-top: -6px;
+  }
+
+  .errormsgpass{
+    color: tomato;
+    margin-top: -1rem;
+   
+  }
+
+  .signineye{
+    position: relative;
+    margin-top: -4rem;
+    margin-left: 17.7rem;
+  }
+
+
+  /* SIGNUP */
+
+  .errorfirst{
+    color: tomato;
+    margin-top: 5px;
+  }
+
+  .signupeye{
+    position: relative;
+    margin-top: -4rem;
+    margin-left: 20rem;
+  }
