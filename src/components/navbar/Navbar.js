@@ -30,7 +30,7 @@ function Navbar() {
           </a>
          
          <a href="https://www.discovemail.com/settings/profile" target='_blank' className="mx-2 text-decoration-none">
-          <span className='profileIcon fs-5'>{email.slice(0,1)}</span>
+          <span className='profileIcon fs-5'>{email?.slice(0,1)}</span>
          </a>
         </div>
       </div>
