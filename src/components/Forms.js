@@ -50,9 +50,9 @@ const Forms = (props) => {
   const emailRef = useRef(null);
   const target = useRef(null);
   const [websiteData, setWebsiteData] = useState();
-  console.log("🚀 ~ file: Forms.js:52 ~ Forms ~ websiteData:", websiteData)
 
   const baseUrl = window.location.origin;
+  console.log("🚀 ~ file: Forms.js:55 ~ Forms ~ baseUrl:", baseUrl)
 
   const [spin, setSpin] = useState({
     load: 0,
@@ -459,7 +459,6 @@ const Forms = (props) => {
 const getWebsiteData = () =>{
   const formData = new FormData();
   formData.append("url", baseUrl);
-  // formData.append("url", 'https://www.heromotocorp.com/en-in/exchange.html');
 
   // {"url": baseUrl}
  
@@ -506,7 +505,7 @@ useEffect(() => {
           <div class="d-flex my-3 text-center">
             <div class="col-12 px-3">
               <div className="d-flex justify-content-between">
-                <h6>{websiteData?.count} results for {websiteData?.url?.match(/(?:https?:\/\/)?(?:www\.)?([^\/]+)\/.*/)[1]}</h6>
+                <h6>{websiteData?.count} results for {websiteData?.url?.match(/(?:http?:\/\/)?(?:www\.)?([^\/]+)\/.*/)[1]}</h6>
                 {websiteData?.email_pattern?.domain?.pattern ? <small>Email pattern : {websiteData?.email_pattern?.domain?.pattern}</small> : null}
               </div>
               <div class="borderBottomDashed"></div>
