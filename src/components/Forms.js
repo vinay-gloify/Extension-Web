@@ -512,14 +512,28 @@ useEffect(() => {
               <div class="borderBottomDashed"></div>
               <div className="d-flex justify-content-between mt-3">
                 <div>
-                  {websiteData?.emails_from_url ?  <div class="dropup">
+                  {websiteData?.emails_from_url ?  <div class="dropdown">
                     <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Company Emails
                     </button>
                     <ul class="dropdown-menu">
                       {websiteData?.emails_from_url?.split(',').map((val)=>(
                         <>
-                         <small class="dropdown-item fw-bold">{val}</small>
+                         <small class="dropdown-item fw-bold">
+                         <OverlayTrigger
+                              placement="top"
+                              overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                            >
+                          <p ref={target}
+                            onClick={()=>handleCopy(val)}
+                            data-toggle="tooltip"
+                            data-trigger="manual"
+                            data-placement="top"
+                            className="text-secondary cursor-pointer ellipsis m-0"
+                            > {val}</p>
+                          </OverlayTrigger>
+                         
+                          </small>
                          <div className="borderBottom"></div>
                         </>
                       ))}
@@ -528,14 +542,27 @@ useEffect(() => {
                  
                 </div>
                 <div>
-                  {websiteData?.phone_numbers_from_url ?  <div class="dropup">
+                  {websiteData?.phone_numbers_from_url ?  <div class="dropdown">
                     <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Company Phone Number
                     </button>
                     <ul class="dropdown-menu">
                       {websiteData?.phone_numbers_from_url?.split(',').map((val)=>(
                         <>
-                         <small class="dropdown-item fw-bold">{val}</small>
+                         <small class="dropdown-item fw-bold">
+                         <OverlayTrigger
+                              placement="top"
+                              overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
+                            >
+                          <p ref={target}
+                            onClick={()=>handleCopy(val)}
+                            data-toggle="tooltip"
+                            data-trigger="manual"
+                            data-placement="top"
+                            className="text-secondary cursor-pointer ellipsis m-0"
+                            > {val}</p>
+                          </OverlayTrigger>
+                         </small>
                          <div className="borderBottom"></div>
                         </>
                       ))}
