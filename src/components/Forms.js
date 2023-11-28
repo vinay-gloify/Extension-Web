@@ -458,8 +458,8 @@ const Forms = (props) => {
 
 const getWebsiteData = () =>{
   const formData = new FormData();
-  // formData.append("url", baseUrl);
-  formData.append("url", 'https://www.heromotocorp.com/en-in/exchange.html');
+  formData.append("url", baseUrl);
+  // formData.append("url", 'https://www.heromotocorp.com/en-in/exchange.html');
 
   // {"url": baseUrl}
  
