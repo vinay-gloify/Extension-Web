@@ -465,9 +465,8 @@ const getWebsiteData = () =>{
   requestInstance
     .post(API_ENDPOINT.WEBSITE_POST_API, formData)
     .then((res) => {
-      console.log("🚀 ~ file: App.js:27 ~ .then ~ res:", res)
       setLoading(true)
-      setWebsiteData(res.data);
+      setWebsiteData(res.data.data);
       toast.success(res.data.message);
       setLoading(false);
     })
@@ -505,7 +504,10 @@ useEffect(() => {
 
           <div class="d-flex my-3 text-center">
             <div class="col-12">
-              <h6>68 results for heromotocorp.com</h6>
+              <div className="d-flex justify-content-between px-3">
+                <h6>68 results for heromotocorp.com</h6>
+                <small>Email pattern : firstname@gloify.com</small>
+              </div>
             </div>
           </div>
           <div className="borderBottom"></div>
