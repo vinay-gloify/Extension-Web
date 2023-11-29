@@ -26,9 +26,9 @@
     "default_popup": "index.html",
 
     "default_icon": {
-      "16": "Linkedin.png",
+      "16": "Logo.png",
 
-      "128": "Linkedin.png"
+      "128": "Logo.png"
     }
   },
 

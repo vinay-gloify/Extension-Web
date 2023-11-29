@@ -22,7 +22,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { toast } from "react-toastify";
 import ReactPaginate from "react-paginate";
-
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const Forms = (props) => {
   const [selectedUserData, setselectedUserData] = useState("");
@@ -461,8 +461,10 @@ const getWebsiteData = () =>{
   chrome?.tabs?.query({ active: true, lastFocusedWindow: true }, (tabs) => {
     let baseUrl = tabs[0]?.url;
     const url = extractBaseUrl(baseUrl);
+
     const formData = new FormData();
     formData.append("url", url);
+    // formData.append("url", 'https://www.tcs.com/');
   
     requestInstance
       .post(API_ENDPOINT.WEBSITE_POST_API, formData)
@@ -506,62 +508,55 @@ useEffect(() => {
               <div class="borderBottomDashed"></div>
               <div className="d-flex justify-content-between mt-3">
                 <div>
-                  {websiteData?.emails_from_url ?  <div class="dropdown">
-                    <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {websiteData?.emails_from_url ? 
+                   <Dropdown>
+                    <Dropdown.Toggle variant="danger" id="dropdown-basic" size="sm">
                         Company Emails
-                    </button>
-                    <ul class="dropdown-menu">
-                      {websiteData?.emails_from_url?.split(',').map((val)=>(
-                        <>
-                         <small class="dropdown-item fw-bold">
-                         <OverlayTrigger
-                              placement="top"
-                              overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
-                            >
-                          <p ref={target}
-                            onClick={()=>handleCopy(val)}
-                            data-toggle="tooltip"
-                            data-trigger="manual"
-                            data-placement="top"
-                            className="text-secondary cursor-pointer ellipsis m-0"
-                            > {val}</p>
-                          </OverlayTrigger>
-                         
-                          </small>
-                         <div className="borderBottom"></div>
-                        </>
-                      ))}
-                    </ul>
-                  </div> : null}
-                 
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                    {websiteData?.emails_from_url?.split(',').map((val)=>(
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>} >
+                        <Dropdown.Item ref={target}
+                          onClick={()=>handleCopy(val)}
+                          data-toggle="tooltip"
+                          data-trigger="manual"
+                          data-placement="top"
+                          className="text-secondary cursor-pointer ellipsis m-0">
+                            {val}
+                        </Dropdown.Item> 
+                        </OverlayTrigger>
+                        ))}
+                        
+                    </Dropdown.Menu>
+                   </Dropdown> : null}
                 </div>
                 <div>
-                  {websiteData?.phone_numbers_from_url ?  <div class="dropdown">
-                    <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {websiteData?.phone_numbers_from_url ?  <Dropdown>
+                    <Dropdown.Toggle variant="danger" id="dropdown-basic" size="sm">
                         Company Phone Number
-                    </button>
-                    <ul class="dropdown-menu">
-                      {websiteData?.phone_numbers_from_url?.split(',').map((val)=>(
-                        <>
-                         <small class="dropdown-item fw-bold">
-                         <OverlayTrigger
-                              placement="top"
-                              overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>}
-                            >
-                          <p ref={target}
-                            onClick={()=>handleCopy(val)}
-                            data-toggle="tooltip"
-                            data-trigger="manual"
-                            data-placement="top"
-                            className="text-secondary cursor-pointer ellipsis m-0"
-                            > {val}</p>
-                          </OverlayTrigger>
-                         </small>
-                         <div className="borderBottom"></div>
-                        </>
-                      ))}
-                    </ul>
-                  </div> : null}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                    {websiteData?.phone_numbers_from_url?.split(',').map((val)=>(
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip id="tooltip">{copied ? 'Copied' : 'Copy'}</Tooltip>} >
+                        <Dropdown.Item ref={target}
+                          onClick={()=>handleCopy(val)}
+                          data-toggle="tooltip"
+                          data-trigger="manual"
+                          data-placement="top"
+                          className="text-secondary cursor-pointer ellipsis m-0">
+                            {val}
+                        </Dropdown.Item> 
+                        </OverlayTrigger>
+                        ))}
+                        
+                    </Dropdown.Menu>
+                   </Dropdown> : null}
                 </div>
                 <div>
                   <a href={websiteData?.instagram_url} target="_blank">
