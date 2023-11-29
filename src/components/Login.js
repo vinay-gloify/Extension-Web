@@ -143,7 +143,7 @@ const formik = useFormik({
               ) : null}
           <div className="getpassword text-end"><a href="https://www.discovemail.com/forget" target="_blank" className="text-decoration-none"> <span>Forgot Password?</span></a></div>
         </div>
-        <button className="btn w-100 btn-primary mt-3" disabled={loading} type="submit">
+        <button className="btn w-100 btn-danger mt-3" disabled={loading} type="submit">
         {loading ? <>Signing...</> : <>Login</>}
         </button>
       </form>

@@ -29,9 +29,9 @@ function Navbar() {
             <RiHomeGearLine className='homeicon themeColor fs-5' />
           </a>
          
-         <a href="https://www.discovemail.com/settings/profile" target='_blank' className="mx-2 text-decoration-none">
+         {email ? <a href="https://www.discovemail.com/settings/profile" target='_blank' className="mx-2 text-decoration-none">
           <span className='profileIcon fs-5'>{email?.slice(0,1)}</span>
-         </a>
+         </a> : null}
         </div>
       </div>
     </div>
