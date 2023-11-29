@@ -51,9 +51,6 @@ const Forms = (props) => {
   const target = useRef(null);
   const [websiteData, setWebsiteData] = useState();
 
-  const baseUrl = window.location.origin;
-  console.log("🚀 ~ file: Forms.js:55 ~ Forms ~ baseUrl:", baseUrl)
-
   const [spin, setSpin] = useState({
     load: 0,
     id: 0,
@@ -448,45 +445,43 @@ const Forms = (props) => {
       });
   }
 
-//   useEffect(() => {
-//     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-//     tooltipTriggerList?.map((tooltipTriggerEl) => {
-//       return new window.bootstrap.Tooltip(tooltipTriggerEl);
-//     });
-// }, []);
-
+  const extractBaseUrl = (url) => {
+    try {
+      const parsedUrl = new URL(url);
+      const baseUrl = parsedUrl.origin + '/';
+      return baseUrl;
+    } catch (error) {
+      console.error('Invalid URL');
+      return null;
+    }
+  };
+  
 
 const getWebsiteData = () =>{
-  const formData = new FormData();
-  formData.append("url", baseUrl);
-
-  // {"url": baseUrl}
- 
-  requestInstance
-    .post(API_ENDPOINT.WEBSITE_POST_API, formData)
-    .then((res) => {
-      setLoading(true)
-      setWebsiteData(res?.data?.data);
-      toast.success(res?.data?.message);
-      setLoading(false);
-    })
-    .catch((err) => {
-      toast.error(err);
-      setLoading(false);
+  chrome?.tabs?.query({ active: true, lastFocusedWindow: true }, (tabs) => {
+    let baseUrl = tabs[0]?.url;
+    const url = extractBaseUrl(baseUrl);
+    const formData = new FormData();
+    formData.append("url", url);
+  
+    requestInstance
+      .post(API_ENDPOINT.WEBSITE_POST_API, formData)
+      .then((res) => {
+        setLoading(true)
+        setWebsiteData(res?.data?.data);
+        toast.success(res?.data?.message);
+        setLoading(false);
+      })
+      .catch((err) => {
+        toast.error(err);
+        setLoading(false);
+      });
     });
 }
-
-
 
 useEffect(() => {
   getWebsiteData();
 }, [])
-
-useEffect(() => {
-  if (baseUrl !== window.location.origin) {
-    getWebsiteData();
-  }
-}, [baseUrl]);
 
 
 
@@ -505,7 +500,7 @@ useEffect(() => {
           <div class="d-flex my-3 text-center">
             <div class="col-12 px-3">
               <div className="d-flex justify-content-between">
-                <h6>{websiteData?.count} results for {websiteData?.url?.match(/(?:http?:\/\/)?(?:www\.)?([^\/]+)\/.*/)[1]}</h6>
+                <h6>{websiteData?.count} results for {websiteData?.url}</h6>
                 {websiteData?.email_pattern?.domain?.pattern ? <small>Email pattern : {websiteData?.email_pattern?.domain?.pattern}</small> : null}
               </div>
               <div class="borderBottomDashed"></div>
