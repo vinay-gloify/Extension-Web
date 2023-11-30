@@ -172,3 +172,18 @@ li {
 .borderBottomDashed{
   border-bottom: 1px dashed red;
 }
+
+.themeBtnColor{
+  background-color: #ffebeb !important;
+    color: red !important;
+    border: 1px solid #ffbdbd !important;
+}
+
+.h22rem{
+  height: 22rem;
+}
+
+.spinner-border{
+  width: 5rem;
+  height: 5rem;
+}
