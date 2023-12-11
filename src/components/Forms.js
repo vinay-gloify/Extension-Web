@@ -630,7 +630,7 @@ useEffect(() => {
   
                   </div>
                   <div class="col-4 text-center">
-                    <small className="badge badge-pill themeBadgeColor text-white ellipsis">{val?.designation}</small>
+                    <small className="badge badge-pill themeBadgeColor text-white ellipsis">{val?.designation?.replace(/<[^>]*>/g, '')}</small>
                     {val?.linkedin_url ? <div>
                       <a href={val?.linkedin_url} target="_blank">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin mx-2 cursor-pointer text-dark" viewBox="0 0 16 16">
