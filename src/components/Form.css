@@ -148,8 +148,8 @@ li {
 }
 
 .themeBadgeColor{
-  background-color: #e75a5a;
-  color: #fff;
+  background-color: #e75a5a !important;
+  color: #fff !important;
 }
 
 .themeBadgeColor:hover{
@@ -175,8 +175,8 @@ li {
 
 .themeBtnColor{
   background-color: #ffebeb !important;
-    color: red !important;
-    border: 1px solid #ffbdbd !important;
+  color: red !important;
+  border: 1px solid #ffbdbd !important;
 }
 
 .h22rem{

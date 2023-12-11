@@ -26,6 +26,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Spinner from 'react-bootstrap/Spinner';
 import noData from '../assets/pic/no-data.jpg';
 
+
 const Forms = (props) => {
   const [selectedUserData, setselectedUserData] = useState("");
   const [responseData, setresponseData] = useState();
@@ -299,13 +300,13 @@ const Forms = (props) => {
             url: tab[0]?.url,
           };
           const tabURL = tab[0]?.url;
-          chrome.cookies.get(
+          chrome?.cookies?.get(
             { url: tab[0]?.url, name: "li_at" },
             function (cookies_li_at) {
               let li_at_value = cookies_li_at.value;
               //console.log(cookies_li_at.value);
               localStorage.setItem("li_at", cookies_li_at.value);
-              chrome.cookies.get(
+              chrome?.cookies?.get(
                 { url: tab[0]?.url, name: "JSESSIONID" },
                 function (cookies_JSESSIONID) {
                   let jsession_value = JSON.stringify(cookies_JSESSIONID.value);
@@ -467,7 +468,7 @@ const getWebsiteData = () =>{
 
     const formData = new FormData();
     formData.append("url", url);
-    // formData.append("url", 'https://www.oneplus.in/');
+    // formData.append("url", 'https://www.tcs.com/');
   
     requestInstance
       .post(API_ENDPOINT.WEBSITE_POST_API, formData)
